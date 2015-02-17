@@ -1,11 +1,9 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## This program, which I do not understand at all but was able to write by replacing m with inv and mean with solve, calculates the inverse of a matrix. 
+## This program, which I do not understand at all but was able to write by replacing m with inv and mean with solve, 
+## calculates the inverse of a matrix. 
 ## If it is called to calculate the inverse of the same matrix twice in a row it reports the cached inverse instead of calculating it again
 
-## The function makeCacheMatrix returns a set of four functions that are used to store and cache the inverse of a matrix and are important for determining
-## whether the inverse has already been calculated
+## The function makeCacheMatrix returns a set of four functions that are used to store and cache the inverse of a matrix and are important 
+## for determining whether the inverse has already been calculated
 
 makeCacheMatrix <- function(x = matrix()) {
   # inv <- NULL sets inverse value to NULL as a placeholder
@@ -40,16 +38,16 @@ cacheSolve <- function(x, ...) {
   # x is a list of functions and the matrix from makeCacheMatrix
   # assign to inv in cacheSolve, the value from getInv(inv) 
   inv <- x$getInv()
-  #If the mean stored under the parameters "vector x" is not NULL, return it.
+  #If the inverse stored under the parameters "matrix x" is not NULL, return it.
   if(!is.null(inv)) {
     message("getting cached data")
     return(inv)
   }
   # assign to data the vector x
   data <- x$get()
-  # Calculate the mean and assign it to m
+  # Calculate the inverse and assign it to inv
   inv <- solve(data, ...)
-  # Store the inverse under the parameters "vector x".
+  # Store the inverse under the parameters "matrix x".
   x$setInv(inv)
   ## Return a matrix that is the inverse of 'x'
   inv     
