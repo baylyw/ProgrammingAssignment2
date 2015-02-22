@@ -1,9 +1,9 @@
-## This program, which I do not understand at all but was able to write by replacing m with inv and mean with solve, 
-## calculates the inverse of a matrix. 
-## If it is called to calculate the inverse of the same matrix twice in a row it reports the cached inverse instead of calculating it again
+## This program calculates the inverse of a matrix. 
+## If it is called to calculate the inverse of the same matrix twice in a row it reports the cached inverse instead of 
+## calculating it again
 
-## The function makeCacheMatrix returns a set of four functions that are used to store and cache the inverse of a matrix and are important 
-## for determining whether the inverse has already been calculated
+## The function makeCacheMatrix returns a set of four functions that are used to store and cache the inverse of a matrix
+## and are important for determining whether the inverse has already been calculated
 
 makeCacheMatrix <- function(x = matrix()) {
   # inv <- NULL sets inverse value to NULL as a placeholder
@@ -31,8 +31,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## This function calls the functions stored in makeCacheMatrix, checks to see if the inverse has already been cached, and reports either the 
-## new or cached inverse. 
+## This function calls the functions stored in makeCacheMatrix, checks to see if the inverse has already been cached,
+## and reports either the new or cached inverse. 
 
 cacheSolve <- function(x, ...) {
   # x is a list of functions and the matrix from makeCacheMatrix
